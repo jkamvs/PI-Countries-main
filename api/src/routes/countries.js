@@ -6,7 +6,7 @@ const router = Router();
 
 router.get("/", async (req, res) => {
   if (req.query.name) {
-    return res.status(200).json(await Filter_Countries(req.query.name));
+    return res.status(200).json(await Filter_Countries(req.query.name.toUpperCase()));
   }
   res.status(200).json(await Todo_los_Paises());
 });
